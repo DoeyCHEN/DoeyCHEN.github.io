@@ -87,16 +87,19 @@
 
 
 
-<meta name="description" content="在大三下这个上课的最后一学期，终于把想了很久的抢课脚本写了，感动（虽然还有bug">
+<meta name="description" content="功能介绍由于同济大学校内的两个WiFi（tongji.portal, tongji.student.portal）长时间无网络活动会自动下线，此时需要重新进入登录页面进行登录，较为繁琐。本脚本可以实现自动侦测网络状态并登录。
+参考 https://github.com/ToddCool/Tongji-Univ.-WiFi-Auto-Login该版本为命令，打算用python写一波 (:з」∠)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python小程序：TJU抢课脚本">
-<meta property="og:url" content="http://yoursite.com/2017/02/28/Python小程序：TJU抢课脚本/index.html">
+<meta property="og:title" content="同济大学Wifi断线重连小程序">
+<meta property="og:url" content="http://yoursite.com/2017/02/28/TJUWifiAutoLogin/index.html">
 <meta property="og:site_name" content="Dyyyyy">
-<meta property="og:description" content="在大三下这个上课的最后一学期，终于把想了很久的抢课脚本写了，感动（虽然还有bug">
-<meta property="og:updated_time" content="2017-02-28T14:22:07.000Z">
+<meta property="og:description" content="功能介绍由于同济大学校内的两个WiFi（tongji.portal, tongji.student.portal）长时间无网络活动会自动下线，此时需要重新进入登录页面进行登录，较为繁琐。本脚本可以实现自动侦测网络状态并登录。
+参考 https://github.com/ToddCool/Tongji-Univ.-WiFi-Auto-Login该版本为命令，打算用python写一波 (:з」∠)">
+<meta property="og:updated_time" content="2017-02-28T14:22:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python小程序：TJU抢课脚本">
-<meta name="twitter:description" content="在大三下这个上课的最后一学期，终于把想了很久的抢课脚本写了，感动（虽然还有bug">
+<meta name="twitter:title" content="同济大学Wifi断线重连小程序">
+<meta name="twitter:description" content="功能介绍由于同济大学校内的两个WiFi（tongji.portal, tongji.student.portal）长时间无网络活动会自动下线，此时需要重新进入登录页面进行登录，较为繁琐。本脚本可以实现自动侦测网络状态并登录。
+参考 https://github.com/ToddCool/Tongji-Univ.-WiFi-Auto-Login该版本为命令，打算用python写一波 (:з」∠)">
 
 
 
@@ -124,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/28/Python小程序：TJU抢课脚本/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/28/TJUWifiAutoLogin/"/>
 
 
 
 
 
-  <title> Python小程序：TJU抢课脚本 | Dyyyyy </title>
+  <title> 同济大学Wifi断线重连小程序 | Dyyyyy </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +252,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/28/Python小程序：TJU抢课脚本/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/28/TJUWifiAutoLogin/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Dyyyyy">
@@ -273,7 +276,7 @@
             
             
               
-                Python小程序：TJU抢课脚本
+                同济大学Wifi断线重连小程序
               
             
           </h1>
@@ -288,7 +291,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-28T20:14:38+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-28T22:03:07+08:00">
                 2017-02-28
               </time>
             
@@ -307,8 +310,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/28/Python小程序：TJU抢课脚本/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/28/Python小程序：TJU抢课脚本/" itemprop="commentCount"></span>
+                <a href="/2017/02/28/TJUWifiAutoLogin/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/28/TJUWifiAutoLogin/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -316,7 +319,7 @@
 
           
           
-             <span id="/2017/02/28/Python小程序：TJU抢课脚本/" class="leancloud_visitors" data-flag-title="Python小程序：TJU抢课脚本">
+             <span id="/2017/02/28/TJUWifiAutoLogin/" class="leancloud_visitors" data-flag-title="同济大学Wifi断线重连小程序">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -345,14 +348,8 @@
       
 
       
-        <p>在大三下这个上课的最后一学期，终于把想了很久的抢课脚本写了，感动（虽然还有bug</p>
-<a id="more"></a>
-<h2 id="模拟登陆4m3系统"><a href="#模拟登陆4m3系统" class="headerlink" title="模拟登陆4m3系统"></a>模拟登陆4m3系统</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">(self)</span>:</span></div><div class="line">    <span class="comment">#   建立会话</span></div><div class="line">    self.s = requests.Session()</div><div class="line">    self.s.headers = header</div><div class="line">    self.s.get(<span class="string">'http://4m3.tongji.edu.cn/eams/login.action'</span>)</div><div class="line">    res = self.s.get(<span class="string">'http://4m3.tongji.edu.cn/eams/samlCheck'</span>).text</div><div class="line">    SAMLRequest = html.fromstring(res).findall(<span class="string">'.//meta'</span>)[<span class="number">0</span>].get(<span class="string">'content'</span>)[<span class="number">6</span>:]</div><div class="line">    self.s.cookies[<span class="string">'oiosaml-fragment'</span>] = <span class="string">''</span></div><div class="line">    self.s.get(SAMLRequest)</div><div class="line">    self.s.post(<span class="string">'https://ids.tongji.edu.cn:8443/nidp/saml2/sso?sid=0'</span>,</div><div class="line">           data=&#123;</div><div class="line">               <span class="string">'option'</span>: <span class="string">'credential'</span>,</div><div class="line">               <span class="string">'Ecom_User_ID'</span>: self.stuNum,     <span class="comment">#学号</span></div><div class="line">               <span class="string">'Ecom_Password'</span>: self.stuPwd,    <span class="comment">#密码</span></div><div class="line">           &#125;)</div><div class="line">    res = self.s.post(<span class="string">'https://ids.tongji.edu.cn:8443/nidp/saml2/sso?sid=0'</span>).text</div><div class="line">    hidden = html.fromstring(res).findall(<span class="string">'.//input'</span>)</div><div class="line">    <span class="keyword">print</span> hidden</div><div class="line">    data = &#123;&#125;</div><div class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> hidden:</div><div class="line">        data[x.get(<span class="string">'name'</span>)] = x.get(<span class="string">'value'</span>)</div><div class="line">    self.s.post(<span class="string">'http://4m3.tongji.edu.cn/eams/saml/SAMLAssertionConsumer'</span>, data=data)</div></pre></td></tr></table></figure>
-<h2 id="进行选退课"><a href="#进行选退课" class="headerlink" title="进行选退课"></a>进行选退课</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></div><div class="line">    ct = <span class="number">1</span></div><div class="line">    <span class="keyword">while</span> (self.elect != [] <span class="keyword">or</span> self.withdraw != []):</div><div class="line">        <span class="keyword">print</span>  <span class="string">u'---------------第%d次刷课--------------'</span> % ct</div><div class="line">        ct = ct + <span class="number">1</span></div><div class="line"></div><div class="line">        <span class="keyword">for</span> course <span class="keyword">in</span> self.elect:</div><div class="line">            <span class="keyword">if</span> self.select(course) == <span class="keyword">True</span>:</div><div class="line">                self.elect.remove(course)</div><div class="line"></div><div class="line">        <span class="keyword">if</span> self.withdraw != &#123;&#125;:</div><div class="line">            <span class="keyword">for</span> withCourse <span class="keyword">in</span> self.withdraw.key:</div><div class="line">                <span class="keyword">if</span> self.unselect(course):</div><div class="line">                    <span class="keyword">if</span> self.select(self.withdraw[withCourse]) == <span class="keyword">True</span>:</div><div class="line">                        <span class="keyword">del</span> self.withdraw[withCourse]</div><div class="line">                    <span class="keyword">else</span>:</div><div class="line">                        self.select(withCourse)</div><div class="line"></div><div class="line">        time.sleep(<span class="number">0.1</span>)</div><div class="line">    <span class="keyword">print</span> <span class="string">u'本次抢课目标已完成!!!请登录选课系统查看结果\a\a'</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">select</span><span class="params">(self,course)</span>:</span></div><div class="line">    res = self.s.get(<span class="string">'http://4m3.tongji.edu.cn/eams/doorOfStdElectCourse.action'</span>).text</div><div class="line">    profileid = html.fromstring(res).find(<span class="string">'.//a'</span>).get(<span class="string">'href'</span>)[<span class="number">-1</span>:<span class="number">-5</span>:<span class="number">-1</span>]</div><div class="line">    res = self.s.get(</div><div class="line">        <span class="string">'http://4m3.tongji.edu.cn/eams/tJStdElectCourse!defaultPage.action?electionProfile.id='</span> + profileid).text</div><div class="line">    res = self.s.get(<span class="string">'http://4m3.tongji.edu.cn/eams/tJStdElectCourse!batchOperator.action?electLessonIds='</span>+course+<span class="string">'%2C&amp;withdrawLessonIds=&amp;exchangeLessonPairs=&amp;_=1488208495866'</span>).text</div><div class="line"></div><div class="line">    <span class="comment"># print res</span></div><div class="line">    result = html.fromstring(res).find(<span class="string">'.//div'</span>).text</div><div class="line">    <span class="keyword">print</span> result.strip()</div><div class="line">    <span class="keyword">if</span> <span class="string">"成功"</span>.decode(<span class="string">'utf-8'</span>) <span class="keyword">in</span> result.strip().decode(<span class="string">'utf-8'</span>):</div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">unselect</span><span class="params">(self,withCourse)</span>:</span></div><div class="line">    res = self.s.get(<span class="string">'http://4m3.tongji.edu.cn/eams/doorOfStdElectCourse.action'</span>).text</div><div class="line">    profileid = html.fromstring(res).find(<span class="string">'.//a'</span>).get(<span class="string">'href'</span>)[<span class="number">-1</span>:<span class="number">-5</span>:<span class="number">-1</span>]</div><div class="line">    res = self.s.get(</div><div class="line">        <span class="string">'http://4m3.tongji.edu.cn/eams/tJStdElectCourse!defaultPage.action?electionProfile.id='</span> + profileid).text</div><div class="line">    res = self.s.get(</div><div class="line">        <span class="string">'http://4m3.tongji.edu.cn/eams/tJStdElectCourse!batchOperator.action?withdrawLessonIds='</span>+withCourse+<span class="string">'&amp;_=1488208495866'</span>).text</div><div class="line"></div><div class="line">    <span class="keyword">print</span> res</div><div class="line">    result = html.fromstring(res).find(<span class="string">'.//div'</span>).text</div><div class="line">    <span class="keyword">print</span> result</div><div class="line">    <span class="keyword">if</span> <span class="string">"成功"</span>.decode(<span class="string">'utf-8'</span>) <span class="keyword">in</span> result.strip().decode(<span class="string">'utf-8'</span>):</div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">False</span></div></pre></td></tr></table></figure>
-<p><a href="http://doeychen.github.io/2017/02/28/Python小程序：TJU抢课脚本/GrabCourse.py" target="_blank" rel="external">完整代码下载</a></p>
-<h2 id="遗留问题"><a href="#遗留问题" class="headerlink" title="遗留问题"></a>遗留问题</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'&amp;_=1488208495866'</span></div></pre></td></tr></table></figure>
-<p>目前post data 参数 &amp;_ 值还未明确 hin丧<br>只能在网页登陆之后进行抢选课后根据js post的参数进行填写</p>
-<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>最后鸣谢建武大大！！！！！！！！！！！！！（虽然他看不到</p>
+        <h2 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h2><p>由于同济大学校内的两个WiFi（tongji.portal, tongji.student.portal）长时间无网络活动会自动下线，此时需要重新进入登录页面进行登录，较为繁琐。本脚本可以实现自动侦测网络状态并登录。</p>
+<p>参考 <a href="https://github.com/ToddCool/Tongji-Univ.-WiFi-Auto-Login" target="_blank" rel="external">https://github.com/ToddCool/Tongji-Univ.-WiFi-Auto-Login</a><br>该版本为命令，打算用python写一波 <em>(:з」∠)</em></p>
 
       
     </div>
@@ -391,8 +388,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/18/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/02/28/TextBooksInfo/" rel="next" title="TJU课程教材查看脚本">
+                <i class="fa fa-chevron-left"></i> TJU课程教材查看脚本
               </a>
             
           </div>
@@ -400,10 +397,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/28/TextBooksInfo/" rel="prev" title="TJU课程教材查看脚本">
-                TJU课程教材查看脚本 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -418,10 +411,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/02/28/Python小程序：TJU抢课脚本/"
-     data-title="Python小程序：TJU抢课脚本"
+        <div class="ds-share flat" data-thread-key="2017/02/28/TJUWifiAutoLogin/"
+     data-title="同济大学Wifi断线重连小程序"
      data-content=""
-     data-url="http://yoursite.com/2017/02/28/Python小程序：TJU抢课脚本/">
+     data-url="http://yoursite.com/2017/02/28/TJUWifiAutoLogin/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -448,8 +441,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/28/Python小程序：TJU抢课脚本/"
-           data-title="Python小程序：TJU抢课脚本" data-url="http://yoursite.com/2017/02/28/Python小程序：TJU抢课脚本/">
+      <div class="ds-thread" data-thread-key="2017/02/28/TJUWifiAutoLogin/"
+           data-title="同济大学Wifi断线重连小程序" data-url="http://yoursite.com/2017/02/28/TJUWifiAutoLogin/">
       </div>
     
   </div>
@@ -564,7 +557,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#模拟登陆4m3系统"><span class="nav-number">1.</span> <span class="nav-text">模拟登陆4m3系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进行选退课"><span class="nav-number">2.</span> <span class="nav-text">进行选退课</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遗留问题"><span class="nav-number">3.</span> <span class="nav-text">遗留问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感谢"><span class="nav-number">4.</span> <span class="nav-text">感谢</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#功能介绍"><span class="nav-number">1.</span> <span class="nav-text">功能介绍</span></a></li></ol></div>
             
 
           </div>
