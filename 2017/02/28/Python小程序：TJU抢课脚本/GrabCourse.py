@@ -3,8 +3,10 @@ import os
 import time
 import requests
 import urllib2
-from lxml import html
+import random
+import json
 
+from lxml import html
 import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -33,8 +35,8 @@ class STU(object):
         print u'----------------运行过程中按Ctrl C退出或直接关闭窗口----------------'
         print u'--------------点击窗口左上角的白色按钮-->编辑可进行粘贴-------------\n'
 
-        self.stuNum = raw_input('请输入学号: '.strip())
-        self.stuPwd = raw_input('请输入密码: '.strip())
+        self.stuNum = '1450126'#raw_input('请输入学号: '.strip())
+        self.stuPwd = 'aa156199y'#raw_input('请输入密码: '.strip())
 
     def login(self):
         #   建立会话
@@ -48,17 +50,21 @@ class STU(object):
         self.s.post('https://ids.tongji.edu.cn:8443/nidp/saml2/sso?sid=0',
                data={
                    'option': 'credential',
-                   'Ecom_User_ID': self.stuNum,
-                   'Ecom_Password': self.stuPwd,
-                   # 'submit': '登陆'
+                   'Ecom_User_ID': self.stuNum,     #学号
+                   'Ecom_Password': self.stuPwd,    #密码
                })
         res = self.s.post('https://ids.tongji.edu.cn:8443/nidp/saml2/sso?sid=0').text
         hidden = html.fromstring(res).findall('.//input')
-        print hidden
         data = {}
         for x in hidden:
             data[x.get('name')] = x.get('value')
         self.s.post('http://4m3.tongji.edu.cn/eams/saml/SAMLAssertionConsumer', data=data)
+
+        # 获取profileid并进入选课页面
+        res = self.s.get('http://4m3.tongji.edu.cn/eams/doorOfStdElectCourse.action').text
+        profileid = html.fromstring(res).find('.//a').get('href')[-1:-5:-1]
+        res = self.s.get(
+            'http://4m3.tongji.edu.cn/eams/tJStdElectCourse!defaultPage.action?electionProfile.id=' + profileid).text
 
     def inputCourse(self):
         print '''输入字母代号后回车
@@ -93,17 +99,18 @@ class STU(object):
 
     def run(self):
         ct = 1
-        while (self.elect != [] or self.withdraw != []):
+        while (self.elect != [] or self.withdraw != {}):
             print  u'---------------第%d次刷课--------------' % ct
             ct = ct + 1
+            print self.elect,self.withdraw
 
             for course in self.elect:
                 if self.select(course) == True:
                     self.elect.remove(course)
 
             if self.withdraw != {}:
-                for withCourse in self.withdraw.key:
-                    if self.unselect(course):
+                for withCourse in self.withdraw.keys():
+                    if self.unselect(withCourse):
                         if self.select(self.withdraw[withCourse]) == True:
                             del self.withdraw[withCourse]
                         else:
@@ -113,35 +120,40 @@ class STU(object):
         print u'本次抢课目标已完成!!!请登录选课系统查看结果\a\a'
 
     def select(self,course):
-        res = self.s.get('http://4m3.tongji.edu.cn/eams/doorOfStdElectCourse.action').text
-        profileid = html.fromstring(res).find('.//a').get('href')[-1:-5:-1]
-        res = self.s.get(
-            'http://4m3.tongji.edu.cn/eams/tJStdElectCourse!defaultPage.action?electionProfile.id=' + profileid).text
-        res = self.s.get('http://4m3.tongji.edu.cn/eams/tJStdElectCourse!batchOperator.action?electLessonIds='+course+'%2C&withdrawLessonIds=&exchangeLessonPairs=&_=1488208495866').text
-
-        # print res
-        result = html.fromstring(res).find('.//div').text
+        now = str(time.time()).replace('.',str(random.randint(0,9)))
+        res = self.s.get('http://4m3.tongji.edu.cn/eams/tJStdElectCourse!batchOperator.action?electLessonIds='+course+'%2C&withdrawLessonIds=&exchangeLessonPairs=&_='+now)
+        result = html.fromstring(res.text).find('.//div')
+        if result == None:
+            time.sleep(1)
+            print res.text
+            return False
+        result = result.text
         print result.strip()
-        if "成功".decode('utf-8') in result.strip().decode('utf-8'):
+        if '成功' in result.strip():
             return True
         else:
             return False
 
     def unselect(self,withCourse):
-        res = self.s.get('http://4m3.tongji.edu.cn/eams/doorOfStdElectCourse.action').text
-        profileid = html.fromstring(res).find('.//a').get('href')[-1:-5:-1]
+        now = str(time.time()).replace('.',str(random.randint(0,9)))
         res = self.s.get(
-            'http://4m3.tongji.edu.cn/eams/tJStdElectCourse!defaultPage.action?electionProfile.id=' + profileid).text
-        res = self.s.get(
-            'http://4m3.tongji.edu.cn/eams/tJStdElectCourse!batchOperator.action?withdrawLessonIds='+withCourse+'&_=1488208495866').text
+            'http://4m3.tongji.edu.cn/eams/tJStdElectCourse!batchOperator.action?withdrawLessonIds='+withCourse+'&_='+now)
 
-        print res
-        result = html.fromstring(res).find('.//div').text
-        print result
-        if "成功".decode('utf-8') in result.strip().decode('utf-8'):
+        result = html.fromstring(res.text).find('.//div')
+        if result == None:
+            time.sleep(1)
+            print res.text
+            return False
+        result = result.text
+        print result.strip()
+        if '成功' in result.strip():
             return True
         else:
             return False
+
+
+
+
 
 if __name__ == '__main__':
     stu = STU()
@@ -159,7 +171,7 @@ if __name__ == '__main__':
             print u'网络出现问题,连接超时,请重新运行'
             stu.login()
 
-    # case: 111111112161303
-
-    # http://4m3.tongji.edu.cn/eams/tJStdElectCourse!batchOperator.action?electLessonIds=111111112161793%2C&withdrawLessonIds=&exchangeLessonPairs=&_=1488208495866
-    # http://4m3.tongji.edu.cn/eams/tJStdElectCourse!batchOperator.action?withdrawLessonIds=111111112161793&_=1488208437676
+    # case: 111111112161303 GIS
+    #       111111112165726 瑜伽
+    #       111111112161793 虚拟现实
+    #       111111112161350 杜庆峰 1488370929754
