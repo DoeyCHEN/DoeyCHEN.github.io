@@ -35,8 +35,8 @@ class STU(object):
         print u'----------------运行过程中按Ctrl C退出或直接关闭窗口----------------'
         print u'--------------点击窗口左上角的白色按钮-->编辑可进行粘贴-------------\n'
 
-        self.stuNum = '1450126'#raw_input('请输入学号: '.strip())
-        self.stuPwd = 'aa156199y'#raw_input('请输入密码: '.strip())
+        self.stuNum = raw_input('请输入学号: '.strip())
+        self.stuPwd = raw_input('请输入密码: '.strip())
 
     def login(self):
         #   建立会话
