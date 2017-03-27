@@ -87,20 +87,20 @@
 
 
 
-<meta name="description" content="饶大大的数据挖掘 😢 凑commit量的。。。">
+<meta name="description" content="饶大大的数据挖掘 😢 凑commit量的。。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学挖掘机到蓝翔">
 <meta property="og:url" content="http://yoursite.com/2017/03/27/DataMining/index.html">
 <meta property="og:site_name" content="Dyyyyy">
-<meta property="og:description" content="饶大大的数据挖掘 😢 凑commit量的。。。">
+<meta property="og:description" content="饶大大的数据挖掘 😢 凑commit量的。。">
 <meta property="og:image" content="http://doeychen.github.io/2017/03/27/学挖掘机到蓝翔/example.png">
 <meta property="og:image" content="http://doeychen.github.io/2017/03/27/学挖掘机到蓝翔/result-lsh.png">
 <meta property="og:image" content="http://doeychen.github.io/2017/03/27/学挖掘机到蓝翔/reslut-knn.png">
 <meta property="og:image" content="http://doeychen.github.io/2017/03/27/学挖掘机到蓝翔/baidu.png">
-<meta property="og:updated_time" content="2017-03-27T16:01:00.000Z">
+<meta property="og:updated_time" content="2017-03-27T16:02:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学挖掘机到蓝翔">
-<meta name="twitter:description" content="饶大大的数据挖掘 😢 凑commit量的。。。">
+<meta name="twitter:description" content="饶大大的数据挖掘 😢 凑commit量的。。">
 <meta name="twitter:image" content="http://doeychen.github.io/2017/03/27/学挖掘机到蓝翔/example.png">
 
 
@@ -360,7 +360,7 @@
       
 
       
-        <p>饶大大的数据挖掘 😢 凑commit量的。。。</p>
+        <p>饶大大的数据挖掘 😢 凑commit量的。。</p>
 <a id="more"></a>
 <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>利用提供的1000条轨迹数据(位于上海地区), 将这些轨迹数据投影到百度地图以进行可视化;<br>将上海地区进行栅格化处理, 形成轨迹-栅格的0./1矩阵<br><img src="http://doeychen.github.io/2017/03/27/学挖掘机到蓝翔/example.png" alt=""><br>完成栅格化处理之后, 每个轨迹对应一个0/1向量, 利用 <strong>各种算法</strong> 处理</p>
 <h3 id="LSH-局部敏感哈希"><a href="#LSH-局部敏感哈希" class="headerlink" title="LSH(局部敏感哈希)"></a>LSH(局部敏感哈希)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">lsh = LSHash(<span class="number">10</span>, Len)	<span class="comment">#将len维降为10维</span></div><div class="line">lsh.index(info, index)	<span class="comment">#将info存到lsh，并标记为index下标</span></div><div class="line">lsh.query(info)		<span class="comment">#查询info相似的结果</span></div></pre></td></tr></table></figure>
