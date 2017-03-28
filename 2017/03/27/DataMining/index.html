@@ -93,15 +93,15 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/27/DataMining/index.html">
 <meta property="og:site_name" content="Dyyyyy">
 <meta property="og:description" content="饶大大的数据挖掘 😢 凑commit量的。。">
-<meta property="og:image" content="http://doeychen.github.io/2017/03/27/DataMining/example.png">
-<meta property="og:image" content="http://doeychen.github.io/2017/03/27/DataMining/result-lsh.png">
-<meta property="og:image" content="http://doeychen.github.io/2017/03/27/DataMining/reslut-knn.png">
-<meta property="og:image" content="http://doeychen.github.io/2017/03/27/DataMining/baidu.png">
-<meta property="og:updated_time" content="2017-03-28T05:29:43.000Z">
+<meta property="og:image" content="http://dyyyyy.github.io/2017/03/27/DataMining/example.png">
+<meta property="og:image" content="http://dyyyyy.github.io/2017/03/27/DataMining/result-lsh.png">
+<meta property="og:image" content="http://dyyyyy.github.io/2017/03/27/DataMining/reslut-knn.png">
+<meta property="og:image" content="http://dyyyyy.github.io/2017/03/27/DataMining/baidu.png">
+<meta property="og:updated_time" content="2017-03-28T05:57:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学挖掘机到蓝翔">
 <meta name="twitter:description" content="饶大大的数据挖掘 😢 凑commit量的。。">
-<meta name="twitter:image" content="http://doeychen.github.io/2017/03/27/DataMining/example.png">
+<meta name="twitter:image" content="http://dyyyyy.github.io/2017/03/27/DataMining/example.png">
 
 
 
@@ -362,13 +362,13 @@
       
         <p>饶大大的数据挖掘 😢 凑commit量的。。</p>
 <a id="more"></a>
-<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>利用提供的1000条轨迹数据(位于上海地区), 将这些轨迹数据投影到百度地图以进行可视化;<br>将上海地区进行栅格化处理, 形成轨迹-栅格的0./1矩阵<br><img src="http://doeychen.github.io/2017/03/27/DataMining/example.png" alt=""><br>完成栅格化处理之后, 每个轨迹对应一个0/1向量, 利用 <strong>各种算法</strong> 处理</p>
+<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>利用提供的1000条轨迹数据(位于上海地区), 将这些轨迹数据投影到百度地图以进行可视化;<br>将上海地区进行栅格化处理, 形成轨迹-栅格的0./1矩阵<br><img src="http://dyyyyy.github.io/2017/03/27/DataMining/example.png" alt=""><br>完成栅格化处理之后, 每个轨迹对应一个0/1向量, 利用 <strong>各种算法</strong> 处理</p>
 <h3 id="LSH-局部敏感哈希"><a href="#LSH-局部敏感哈希" class="headerlink" title="LSH(局部敏感哈希)"></a>LSH(局部敏感哈希)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">lsh = LSHash(<span class="number">10</span>, Len)	<span class="comment">#将len维降为10维</span></div><div class="line">lsh.index(info, index)	<span class="comment">#将info存到lsh，并标记为index下标</span></div><div class="line">lsh.query(info)		<span class="comment">#查询info相似的结果</span></div></pre></td></tr></table></figure>
-<p><img src="http://doeychen.github.io/2017/03/27/DataMining/result-lsh.png" alt="示例"><br><a href="http://doeychen.github.io/2017/03/27/DataMining/lsh.py" target="_blank" rel="external">代码下载</a></p>
+<p><img src="http://dyyyyy.github.io/2017/03/27/DataMining/result-lsh.png" alt="示例"><br><a href="http://dyyyyy.github.io/2017/03/27/DataMining/lsh.py" target="_blank" rel="external">代码下载</a></p>
 <h3 id="KNN-K相邻对"><a href="#KNN-K相邻对" class="headerlink" title="KNN(K相邻对)"></a>KNN(K相邻对)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nbrs=NearestNeighbors(n_neighbors=N,algorithm=<span class="string">'ball_tree'</span>).fit(info)	<span class="comment">#将info数据，聚类大小为N</span></div><div class="line">indices = nbrs.kneighbors(cmp)	<span class="comment">#将cmp中的各个item，可得info中与之最相似的N个</span></div></pre></td></tr></table></figure>
-<p><img src="http://doeychen.github.io/2017/03/27/DataMining/reslut-knn.png" alt="示例"><br><a href="http://doeychen.github.io/2017/03/27/DataMining/knn.py" target="_blank" rel="external">代码下载</a></p>
+<p><img src="http://dyyyyy.github.io/2017/03/27/DataMining/reslut-knn.png" alt="示例"><br><a href="http://dyyyyy.github.io/2017/03/27/DataMining/knn.py" target="_blank" rel="external">代码下载</a></p>
 <h3 id="百度地图投影"><a href="#百度地图投影" class="headerlink" title="百度地图投影"></a>百度地图投影</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">line.push(new BMap.Point(Xpos, Ypos);	<span class="comment">#将所有的XY坐标创建对应的point</span></div><div class="line">var polyline = new BMap.Polyline(line, &#123;strokeColor:color, strokeWeight:lineweight, strokeOpacity:<span class="number">0</span>&#125;); 	<span class="comment">#画折线</span></div></pre></td></tr></table></figure>
-<p><img src="http://doeychen.github.io/2017/03/27/DataMining/baidu.png" alt="示例"><br><a href="http://doeychen.github.io/2017/03/27/DataMining/try.html" target="_blank" rel="external">代码下载</a></p>
+<p><img src="http://dyyyyy.github.io/2017/03/27/DataMining/baidu.png" alt="示例"><br><a href="http://dyyyyy.github.io/2017/03/27/DataMining/try.html" target="_blank" rel="external">代码下载</a></p>
 
       
     </div>
