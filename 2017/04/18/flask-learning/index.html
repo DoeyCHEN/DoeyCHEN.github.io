@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="DataMing," />
+  <meta name="keywords" content="Python - Notes," />
 
 
 
@@ -87,21 +87,16 @@
 
 
 
-<meta name="description" content="饶大大的数据挖掘 😢 凑commit量的。。">
+<meta name="description" content="Flask 学习笔记！持续更新！！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学挖掘机到蓝翔">
-<meta property="og:url" content="http://yoursite.com/2017/03/27/DataMining/index.html">
+<meta property="og:title" content="Flask学习笔记">
+<meta property="og:url" content="http://yoursite.com/2017/04/18/flask-learning/index.html">
 <meta property="og:site_name" content="Dyyyyy">
-<meta property="og:description" content="饶大大的数据挖掘 😢 凑commit量的。。">
-<meta property="og:image" content="http://dyyyyy.github.io/2017/03/27/DataMining/example.png">
-<meta property="og:image" content="http://dyyyyy.github.io/2017/03/27/DataMining/result-lsh.png">
-<meta property="og:image" content="http://dyyyyy.github.io/2017/03/27/DataMining/reslut-knn.png">
-<meta property="og:image" content="http://dyyyyy.github.io/2017/03/27/DataMining/baidu.png">
-<meta property="og:updated_time" content="2017-04-15T15:43:06.000Z">
+<meta property="og:description" content="Flask 学习笔记！持续更新！！">
+<meta property="og:updated_time" content="2017-04-18T15:49:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学挖掘机到蓝翔">
-<meta name="twitter:description" content="饶大大的数据挖掘 😢 凑commit量的。。">
-<meta name="twitter:image" content="http://dyyyyy.github.io/2017/03/27/DataMining/example.png">
+<meta name="twitter:title" content="Flask学习笔记">
+<meta name="twitter:description" content="Flask 学习笔记！持续更新！！">
 
 
 
@@ -129,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/27/DataMining/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/18/flask-learning/"/>
 
 
 
 
 
-  <title> 学挖掘机到蓝翔 | Dyyyyy </title>
+  <title> Flask学习笔记 | Dyyyyy </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -264,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/27/DataMining/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/18/flask-learning/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Dyyyyy">
@@ -288,7 +283,7 @@
             
             
               
-                学挖掘机到蓝翔
+                Flask学习笔记
               
             
           </h1>
@@ -303,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-27T23:29:20+08:00">
-                2017-03-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-18T19:48:08+08:00">
+                2017-04-18
               </time>
             
 
@@ -322,8 +317,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/27/DataMining/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/27/DataMining/" itemprop="commentCount"></span>
+                <a href="/2017/04/18/flask-learning/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/18/flask-learning/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -331,7 +326,7 @@
 
           
           
-             <span id="/2017/03/27/DataMining/" class="leancloud_visitors" data-flag-title="学挖掘机到蓝翔">
+             <span id="/2017/04/18/flask-learning/" class="leancloud_visitors" data-flag-title="Flask学习笔记">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -360,18 +355,21 @@
       
 
       
-        <p>饶大大的数据挖掘 😢 凑commit量的。。</p>
+        <p>Flask 学习笔记！持续更新！！</p>
 <a id="more"></a>
-<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>利用提供的1000条轨迹数据(位于上海地区), 将这些轨迹数据投影到百度地图以进行可视化;<br>将上海地区进行栅格化处理, 形成轨迹-栅格的0./1矩阵<br><img src="http://dyyyyy.github.io/2017/03/27/DataMining/example.png" alt=""><br>完成栅格化处理之后, 每个轨迹对应一个0/1向量, 利用 <strong>各种算法</strong> 处理</p>
-<h3 id="LSH-局部敏感哈希"><a href="#LSH-局部敏感哈希" class="headerlink" title="LSH(局部敏感哈希)"></a>LSH(局部敏感哈希)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">lsh = LSHash(<span class="number">10</span>, Len)	<span class="comment">#将len维降为10维</span></div><div class="line">lsh.index(info, index)	<span class="comment">#将info存到lsh，并标记为index下标</span></div><div class="line">lsh.query(info)		<span class="comment">#查询info相似的结果</span></div></pre></td></tr></table></figure>
-<p><img src="http://dyyyyy.github.io/2017/03/27/DataMining/result-lsh.png" alt="示例"><br><a href="http://dyyyyy.github.io/2017/03/27/DataMining/lsh.py" target="_blank" rel="external">代码下载</a></p>
-<h3 id="KNN-K相邻对"><a href="#KNN-K相邻对" class="headerlink" title="KNN(K相邻对)"></a>KNN(K相邻对)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nbrs=NearestNeighbors(n_neighbors=N,algorithm=<span class="string">'ball_tree'</span>).fit(info)	<span class="comment">#将info数据，聚类大小为N</span></div><div class="line">indices = nbrs.kneighbors(cmp)	<span class="comment">#将cmp中的各个item，可得info中与之最相似的N个</span></div></pre></td></tr></table></figure>
-<p><img src="http://dyyyyy.github.io/2017/03/27/DataMining/reslut-knn.png" alt="示例"><br><a href="http://dyyyyy.github.io/2017/03/27/DataMining/knn.py" target="_blank" rel="external">代码下载</a></p>
-<h3 id="百度地图投影"><a href="#百度地图投影" class="headerlink" title="百度地图投影"></a>百度地图投影</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">line.push(new BMap.Point(Xpos, Ypos);	<span class="comment">#将所有的XY坐标创建对应的point</span></div><div class="line">var polyline = new BMap.Polyline(line, &#123;strokeColor:color, strokeWeight:lineweight, strokeOpacity:<span class="number">0</span>&#125;); 	<span class="comment">#画折线</span></div></pre></td></tr></table></figure>
-<p><img src="http://dyyyyy.github.io/2017/03/27/DataMining/baidu.png" alt="示例"><br><a href="http://dyyyyy.github.io/2017/03/27/DataMining/try.html" target="_blank" rel="external">代码下载</a></p>
-<h3 id="使用Silhouette系数评价k-means聚类质量，求得最佳聚类数量k"><a href="#使用Silhouette系数评价k-means聚类质量，求得最佳聚类数量k" class="headerlink" title="使用Silhouette系数评价k-means聚类质量，求得最佳聚类数量k"></a>使用Silhouette系数评价k-means聚类质量，求得最佳聚类数量k</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"> <span class="comment"># 求解最优cluster和此时silhouette_avg值</span></div><div class="line">res = []	<span class="comment"># 最优分类结果</span></div><div class="line">resX = []	<span class="comment"># cluster大小</span></div><div class="line">resY = []	<span class="comment"># silhouette_avg大小</span></div><div class="line">highest = cluster = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> n_cluster <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">52</span>):</div><div class="line">    kmeans = KMeans(n_clusters=n_cluster, random_state = <span class="number">10</span>)    <span class="comment"># 定义聚类个数 随机数种子</span></div><div class="line">    cluster_labels = kmeans.fit_predict(newPath)                <span class="comment"># 进行聚类</span></div><div class="line">    silhouette_avg = silhouette_score(newPath, cluster_labels)  <span class="comment"># silhouette_avg</span></div><div class="line">    <span class="keyword">if</span>(highest &lt; silhouette_avg ):                              <span class="comment"># 求得最大silhouette_avg cluster</span></div><div class="line">        highest = silhouette_avg </div><div class="line">        res = cluster_labels</div><div class="line">        cluster = n_cluster</div><div class="line">    resX.append(n_cluster)</div><div class="line">    resY.append(silhouette_avg)</div><div class="line">    <span class="keyword">print</span> <span class="string">"for n_clusters ="</span>, n_cluster, <span class="string">", the average silhouette_score is"</span>, silhouette_avg</div></pre></td></tr></table></figure>
-<h3 id="使用Silhouette系数评价DBSCAN聚类质量，求得最佳eps值"><a href="#使用Silhouette系数评价DBSCAN聚类质量，求得最佳eps值" class="headerlink" title="使用Silhouette系数评价DBSCAN聚类质量，求得最佳eps值"></a>使用Silhouette系数评价DBSCAN聚类质量，求得最佳eps值</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"> <span class="comment"># 求解最优cluster和此时silhouette_avg值</span></div><div class="line">res = []	<span class="comment"># 最优分类结果</span></div><div class="line">resX = []	<span class="comment"># cluster大小</span></div><div class="line">resY = []	<span class="comment"># silhouette_avg大小</span></div><div class="line">highest = cluster = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> eps <span class="keyword">in</span> range(<span class="number">10</span>,<span class="number">20</span>):</div><div class="line">    db = DBSCAN(eps=eps, min_samples=<span class="number">1</span>).fit(newPath)</div><div class="line">    dbscan_labels = db.labels_</div><div class="line">    n_cluster = len(set(dbscan_labels)) - (<span class="number">1</span> <span class="keyword">if</span> <span class="number">-1</span> <span class="keyword">in</span> dbscan_labels <span class="keyword">else</span> <span class="number">0</span>)</div><div class="line">    silhouette_avg = metrics.silhouette_score(newPath, dbscan_labels)</div><div class="line">    <span class="keyword">if</span>(highest &lt; silhouette_avg ):                             </div><div class="line">        highest = silhouette_avg </div><div class="line">        res = dbscan_labels</div><div class="line">        cluster = n_cluster</div><div class="line">    resX.append(n_cluster)</div><div class="line">    resY.append(silhouette_avg)</div><div class="line">    print(<span class="string">"for eps = %d, Silhouette Coefficient = %0.3f, cluster = %d"</span> %(eps, silhouette_avg, n_cluster))</div></pre></td></tr></table></figure>
-<h3 id="使用gmm聚类以上轨迹数据，比较GMM，K-means，DBSCAN的聚类结果"><a href="#使用gmm聚类以上轨迹数据，比较GMM，K-means，DBSCAN的聚类结果" class="headerlink" title="使用gmm聚类以上轨迹数据，比较GMM，K-means，DBSCAN的聚类结果"></a>使用gmm聚类以上轨迹数据，比较GMM，K-means，DBSCAN的聚类结果</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> <span class="comment"># 以knn结果为真实聚类结果</span></div><div class="line">kmeans = KMeans(n_clusters = <span class="number">6</span>, random_state = <span class="number">10</span>)</div><div class="line">cluster_labels = kmeans.fit_predict(newPath)</div><div class="line">estimators = dict((cov_type, GaussianMixture(n_components = <span class="number">6</span>, covariance_type = cov_type, max_iter = <span class="number">20</span>, random_state = <span class="number">10</span>))</div><div class="line">                 <span class="keyword">for</span> cov_type <span class="keyword">in</span> [<span class="string">'spherical'</span>, <span class="string">'diag'</span>, <span class="string">'tied'</span>, <span class="string">'full'</span>])</div><div class="line"><span class="keyword">for</span> index, (name, estimator) <span class="keyword">in</span> enumerate(estimators.items()):</div><div class="line">    estimator.fit(newPath)</div><div class="line">    res = estimator.predict(newPath)</div><div class="line">    train_accury = np.mean(res.ravel() == cluster_labels.ravel()) * <span class="number">100</span></div><div class="line"><span class="keyword">print</span> train_accury</div></pre></td></tr></table></figure>
+<h3 id="将route-装饰器绑定到对应url上"><a href="#将route-装饰器绑定到对应url上" class="headerlink" title="将route()装饰器绑定到对应url上"></a>将route()装饰器绑定到对应url上</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@app.route('/')</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'Index Page'</span></div><div class="line"></div><div class="line"><span class="meta">@app.route('/hello')</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'Hello World'</span></div></pre></td></tr></table></figure>
+<h3 id="变量规则"><a href="#变量规则" class="headerlink" title="变量规则"></a>变量规则</h3><p>为url添加 变量部分 <code>&lt;variable_name&gt;</code><br>可以用 <code>&lt;converter:variable_name&gt;</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@app.route('/user/&lt;username&gt;')</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_user_profile</span><span class="params">(username)</span>:</span></div><div class="line">    <span class="comment"># show the user profile for that user</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'User %s'</span> % username</div><div class="line"></div><div class="line"><span class="meta">@app.route('/post/&lt;int:post_id&gt;')</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_post</span><span class="params">(post_id)</span>:</span></div><div class="line">    <span class="comment"># show the post with the given id, the id is an integer</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'Post %d'</span> % post_id</div></pre></td></tr></table></figure>
+<p>其中 <code>converter</code>有<br>int(接受整数);float(接受浮点数);path(和默认的相似，但也接受斜线)</p>
+<h3 id="唯一url和重定向"><a href="#唯一url和重定向" class="headerlink" title="唯一url和重定向"></a>唯一url和重定向</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@app.route('/projects/')</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">projects</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'The project page'</span></div><div class="line"></div><div class="line"><span class="meta">@app.route('/about')</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">about</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'The about page'</span></div></pre></td></tr></table></figure>
+<h3 id="构造url"><a href="#构造url" class="headerlink" title="构造url"></a>构造url</h3><p>需import url_for模块<br>使用url_for()关键字为函数指定url<br>它接受函数名作为第一个参数，也接受对应url规则的变量部分的命名参数。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; from flask import Flask, url_for</div><div class="line">&gt;&gt;&gt; app = Flask(__name__)</div><div class="line">&gt;&gt;&gt; @app.route('/')</div><div class="line">... def index(): pass</div><div class="line">...</div><div class="line">&gt;&gt;&gt; @app.route('/login')</div><div class="line">... def login(): pass</div><div class="line">...</div><div class="line">&gt;&gt;&gt; @app.route('/user/&lt;username&gt;')</div><div class="line">... def profile(username): pass</div><div class="line">...</div><div class="line">&gt;&gt;&gt; with app.test_request_context():</div><div class="line">...  print url_for('index')</div><div class="line">...  print url_for('login')</div><div class="line">...  print url_for('login', next='/')</div><div class="line">...  print url_for('profile', username='John Doe')</div><div class="line">...</div><div class="line">/</div><div class="line">/login</div><div class="line">/login?next=/</div><div class="line">/user/John%20Doe</div></pre></td></tr></table></figure></p>
+<h3 id="规定http方法"><a href="#规定http方法" class="headerlink" title="规定http方法"></a>规定http方法</h3><p>默认情况下，如<code>@app.route(&#39;/&#39;)</code>只回应get请求<br>可以通过route()装饰器传递methods</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@app.route('/login', methods=['GET', 'POST'])</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</div><div class="line">        do_the_login()</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        show_the_login_form()</div></pre></td></tr></table></figure>
+<p>http方法有get, head, post, put, delete, options</p>
+<h3 id="静态文件"><a href="#静态文件" class="headerlink" title="静态文件"></a>静态文件</h3><p>通常为css js文件，放在static文件夹中，使用<code>／static</code>访问<br>给静态文件生成url<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">url_for(<span class="string">'static'</span>, filename=<span class="string">'style.css'</span>)</div></pre></td></tr></table></figure></p>
+<h3 id="模版渲染"><a href="#模版渲染" class="headerlink" title="模版渲染"></a>模版渲染</h3><p>使用<code>render_template()</code>方法来渲染模板。你需要做的一切就是将模板名和你想作为关键字的参数传入模板的变量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> render_template</div><div class="line"></div><div class="line"><span class="meta">@app.route('/hello/')</span></div><div class="line"><span class="meta">@app.route('/hello/&lt;name&gt;')</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">(name=None)</span>:</span></div><div class="line">    <span class="keyword">return</span> render_template(<span class="string">'hello.html'</span>, name=name)</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -394,7 +392,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/DataMing/" rel="tag"># DataMing</a>
+            <a href="/tags/Python-Notes/" rel="tag"># Python - Notes</a>
           
         </div>
       
@@ -407,8 +405,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/27/hexoNotes/" rel="next" title="Hexo常用命令">
-                <i class="fa fa-chevron-left"></i> Hexo常用命令
+              <a href="/2017/04/17/商务智能/" rel="next" title="商务智能UI设计">
+                <i class="fa fa-chevron-left"></i> 商务智能UI设计
               </a>
             
           </div>
@@ -416,10 +414,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/16/dns/" rel="prev" title="架起域名到github pages的桥梁">
-                架起域名到github pages的桥梁 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -434,10 +428,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/03/27/DataMining/"
-     data-title="学挖掘机到蓝翔"
+        <div class="ds-share flat" data-thread-key="2017/04/18/flask-learning/"
+     data-title="Flask学习笔记"
      data-content=""
-     data-url="http://yoursite.com/2017/03/27/DataMining/">
+     data-url="http://yoursite.com/2017/04/18/flask-learning/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -464,8 +458,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/27/DataMining/"
-           data-title="学挖掘机到蓝翔" data-url="http://yoursite.com/2017/03/27/DataMining/">
+      <div class="ds-thread" data-thread-key="2017/04/18/flask-learning/"
+           data-title="Flask学习笔记" data-url="http://yoursite.com/2017/04/18/flask-learning/">
       </div>
     
   </div>
@@ -580,7 +574,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LSH-局部敏感哈希"><span class="nav-number">2.</span> <span class="nav-text">LSH(局部敏感哈希)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KNN-K相邻对"><span class="nav-number">3.</span> <span class="nav-text">KNN(K相邻对)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#百度地图投影"><span class="nav-number">4.</span> <span class="nav-text">百度地图投影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Silhouette系数评价k-means聚类质量，求得最佳聚类数量k"><span class="nav-number">5.</span> <span class="nav-text">使用Silhouette系数评价k-means聚类质量，求得最佳聚类数量k</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Silhouette系数评价DBSCAN聚类质量，求得最佳eps值"><span class="nav-number">6.</span> <span class="nav-text">使用Silhouette系数评价DBSCAN聚类质量，求得最佳eps值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用gmm聚类以上轨迹数据，比较GMM，K-means，DBSCAN的聚类结果"><span class="nav-number">7.</span> <span class="nav-text">使用gmm聚类以上轨迹数据，比较GMM，K-means，DBSCAN的聚类结果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#将route-装饰器绑定到对应url上"><span class="nav-number">1.</span> <span class="nav-text">将route()装饰器绑定到对应url上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量规则"><span class="nav-number">2.</span> <span class="nav-text">变量规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#唯一url和重定向"><span class="nav-number">3.</span> <span class="nav-text">唯一url和重定向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造url"><span class="nav-number">4.</span> <span class="nav-text">构造url</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#规定http方法"><span class="nav-number">5.</span> <span class="nav-text">规定http方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态文件"><span class="nav-number">6.</span> <span class="nav-text">静态文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模版渲染"><span class="nav-number">7.</span> <span class="nav-text">模版渲染</span></a></li></ol></div>
             
 
           </div>
