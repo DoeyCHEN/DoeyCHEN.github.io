@@ -1,0 +1,871 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mytype use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="DataMing,算法," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="准备同样，先给作业要求
+gsp算法链接来一份👇戳这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gsp算法">
+<meta property="og:url" content="http://yoursite.com/2017/05/16/gsp/index.html">
+<meta property="og:site_name" content="Dyyyyy">
+<meta property="og:description" content="准备同样，先给作业要求
+gsp算法链接来一份👇戳这">
+<meta property="og:image" content="http://dyyyyy.github.io/2017/05/16/gsp/hw.png">
+<meta property="og:updated_time" content="2017-05-16T13:49:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gsp算法">
+<meta name="twitter:description" content="准备同样，先给作业要求
+gsp算法链接来一份👇戳这">
+<meta name="twitter:image" content="http://dyyyyy.github.io/2017/05/16/gsp/hw.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'MyType',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/16/gsp/"/>
+
+
+
+
+
+  <title> gsp算法 | Dyyyyy </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dyyyyy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/16/gsp/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Dyyyyy">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Dyyyyy">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Dyyyyy" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                gsp算法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-16T20:14:59+08:00">
+                2017-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/16/gsp/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/16/gsp/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/05/16/gsp/" class="leancloud_visitors" data-flag-title="gsp算法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>同样，先给作业要求<br><img src="http://dyyyyy.github.io/2017/05/16/gsp/hw.png" alt="又一份作业"></p>
+<p>gsp算法链接来一份👇<br><a href="http://baike.baidu.com/link?url=Cy0UozVun3FwGXnVzPMY_RkGwoYdFDK3t8X5jgE8-QwdGdBu4exAqgx7uGpd41gAvC8ZL0UO3sxUhIhbIfW2B05ZZ61cyUm2RZuDdyB6GJ3" target="_blank" rel="external">戳这</a></p>
+<a id="more"></a>
+<h3 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h3><p>梳理一下自己的理解</p>
+<ol>
+<li>获取种子集</li>
+<li>将序列集 Li 不断通过连接和修建生成候选序列模式，然后计算序列的支持度，将满足一定支持度的序列放入新序列集 Li+1 中</li>
+<li>重复第二步，直到没有新序列集产生</li>
+</ol>
+<p>产生序列模式分两步：<br>连接阶段：如果去掉序列模式s1的第一个项目与去掉序列模式s2的最后一个项目所得到的序列相同，则可以将s1与s2进行连接，即将s2的最后一个项目添加到s1中<br>即 asd,a,b,cd,s 和 a,b,cd,s,akj<br>还挺好理解的<br>有，候选模式 asd,a,b,cd,s,akj</p>
+<p>修切阶段：若某候选序列模式的某个子序列不是序列模式，则此候选序列模式不可能是序列模式，将它从候选序列模式中删除<br>即 asd,a,b,cd,s 和 a,b,cd,s,akj<br>组合成 asd,a,b,cd,s,akj 其中 asd,akj不是序列模式<br>故，将其剪掉</p>
+<h3 id="代码。。。。"><a href="#代码。。。。" class="headerlink" title="代码。。。。"></a>代码。。。。</h3><p>按照上述的描述和作业要求，分成了几块，下面就挑几个讲讲</p>
+<h4 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</div><div class="line">    queue = []<span class="comment">#所有的备选序列放在这里面</span></div><div class="line">    queue_new = []<span class="comment">#最终结果在这里面</span></div><div class="line">    top = <span class="number">0</span> <span class="comment">#这个是queue_new的队尾标号</span></div><div class="line">    times = <span class="number">1</span> <span class="comment">#support参数，因为该文件最多只有一个支持度，故选1</span></div><div class="line">    start = datetime.now()</div><div class="line">    path = loadDataSet() <span class="comment">#加载数据集</span></div><div class="line">    res = getC1(path, times) <span class="comment">#构造种子集</span></div><div class="line">    <span class="keyword">if</span> len(res) &gt; <span class="number">1</span>: <span class="comment">#若种子集存在，则开始生成序列模式</span></div><div class="line">        getFreq(top, queue, queue_new, res, times, path)</div><div class="line">    end = datetime.now()</div><div class="line">    <span class="keyword">print</span> (end - start).microseconds,<span class="string">'ms'</span> <span class="comment">#运行时间</span></div><div class="line">    count(queue_new)</div></pre></td></tr></table></figure>
+<h4 id="加载数据集"><a href="#加载数据集" class="headerlink" title="加载数据集"></a>加载数据集</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadDataSet</span><span class="params">()</span>:</span></div><div class="line">    data = pd.DataFrame(pd.read_csv(<span class="string">"/Users/cz/Desktop/daily/GSM/my.csv"</span>))</div><div class="line">    rec = []</div><div class="line">    path = []</div><div class="line">    exPos = <span class="number">0</span></div><div class="line">    exTime = <span class="number">0</span></div><div class="line">    tmp = []</div><div class="line"></div><div class="line">    <span class="keyword">for</span> index, item <span class="keyword">in</span> data.iterrows():</div><div class="line">        gridId = item[<span class="string">'GridID'</span>]</div><div class="line">        imsi = item[<span class="string">'IMSI'</span>]</div><div class="line">        time = item[<span class="string">'MRTime'</span>] <span class="comment">#取出各个信息</span></div><div class="line">        <span class="keyword">if</span> imsi <span class="keyword">not</span> <span class="keyword">in</span> rec: <span class="comment">#当这个手机是新手机时，视作开始一个新交易</span></div><div class="line">            exPos = <span class="number">0</span></div><div class="line">            exTime = <span class="number">0</span></div><div class="line">            tmp = []</div><div class="line">            rec.append(imsi) <span class="comment">#将现在的交易，放入rec中</span></div><div class="line">            path.append([])</div><div class="line">        <span class="keyword">if</span> exTime == time:	<span class="comment">#如果现在的时间和之前一样，说明在数据集合中，他们应该是同时出现的，是asd这种</span></div><div class="line">            <span class="keyword">if</span> exPos == gridId:</div><div class="line">                <span class="keyword">continue</span></div><div class="line">            <span class="keyword">else</span>: <span class="comment">#如果这个位置和之前一样，则添加到这个asd中</span></div><div class="line">                exPos = gridId</div><div class="line">                tmp.append(gridId)</div><div class="line">        <span class="keyword">else</span>: <span class="comment">##如果现在的时间和之前一样，说明在数据集合中，他们应该是前后出现的，是a,s,d这种</span></div><div class="line">            exTime = time</div><div class="line">            exPos = gridId</div><div class="line">            <span class="keyword">if</span> tmp != []:</div><div class="line">                path[rec.index(imsi)].append(tmp)</div><div class="line">            tmp = [gridId]</div><div class="line">    path[rec.index(imsi)].append(tmp)</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> path</div></pre></td></tr></table></figure>
+<h4 id="构造种子集合"><a href="#构造种子集合" class="headerlink" title="构造种子集合"></a>构造种子集合</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getC1</span><span class="params">(path, times)</span>:</span>	<span class="comment">#路径和支持度。。下面的参数名称。。有点辣眼。。</span></div><div class="line">    rec = &#123;&#125;</div><div class="line">    res = []</div><div class="line">    <span class="comment"># 获取所有出现的物品</span></div><div class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> path:</div><div class="line">        tmp = &#123;&#125;</div><div class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> row: <span class="comment">#单个交易</span></div><div class="line">            <span class="keyword">for</span> single <span class="keyword">in</span> item: <span class="comment">#单个时间段</span></div><div class="line">                <span class="keyword">if</span> single <span class="keyword">not</span> <span class="keyword">in</span> tmp <span class="keyword">and</span> single <span class="keyword">not</span> <span class="keyword">in</span> rec: <span class="comment">#获取这个时间段的不同物品</span></div><div class="line">                    tmp[single] = rec[single] = <span class="number">1</span> <span class="comment">#计算出现的次数</span></div><div class="line">                <span class="keyword">elif</span> single <span class="keyword">not</span> <span class="keyword">in</span> tmp <span class="keyword">and</span> single <span class="keyword">in</span> rec:</div><div class="line">                    rec[single] += <span class="number">1</span></div><div class="line">    <span class="comment"># 计算支持度</span></div><div class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> rec.keys():</div><div class="line">        <span class="keyword">if</span> rec[item] &gt;= times:</div><div class="line">            res.append(item)</div><div class="line">    print(<span class="string">'频繁1项集为:%s'</span> %res)</div><div class="line">    <span class="keyword">return</span> res</div></pre></td></tr></table></figure>
+<h3 id="获取序列集"><a href="#获取序列集" class="headerlink" title="获取序列集"></a>获取序列集</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getFreq</span><span class="params">(top, queue, queue_new, res, times, path)</span>:</span></div><div class="line">    cas = <span class="number">0</span> <span class="comment">#。。因为效率问题。。为了不让他把所有候选集都选出来。。废太长时间。。。所以设了个值。。强制终止运行</span></div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        cas += <span class="number">1</span></div><div class="line">        <span class="keyword">if</span>(queue_new == []): <span class="comment">#若为空，说明还未构造初始的两元序列集</span></div><div class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(len(res)):</div><div class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> range(len(res)): </div><div class="line">                <span class="comment">#直接开始构造 若有a,b,c则生成 (a,b)(ab)(a,c)(ac)(b,a)(ba)(b,c)(bc)(c,a)(ca)(c,b)(cb)</span></div><div class="line">                    <span class="keyword">if</span> i != j:</div><div class="line">                        queue.append([[res[i]], [res[j]]])</div><div class="line">                    <span class="keyword">if</span> i &lt; j:</div><div class="line">                        queue.append([[res[i], res[j]]])</div><div class="line"></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(queue)):<span class="comment">#开始了</span></div><div class="line">            <span class="keyword">if</span>(isFreq(queue[i], path, times)) <span class="keyword">and</span> queue[i] <span class="keyword">not</span> <span class="keyword">in</span> queue_new:	</div><div class="line">            <span class="comment"># 将候选集中不支持序列集的挑出来，若满足支持度且是新的序列模式，则添加到queue_new中</span></div><div class="line">                queue_new.append(queue[i])	</div><div class="line">        <span class="keyword">if</span> queue_new == []:	<span class="comment">#若开始就挂了 无fk可说</span></div><div class="line">            <span class="keyword">break</span></div><div class="line">        <span class="keyword">if</span> (queue_new != []):	<span class="comment">#若没挂</span></div><div class="line">            <span class="keyword">if</span> top == len(queue_new) - <span class="number">1</span> <span class="keyword">or</span> top == len(queue_new):<span class="comment"># or cas == 2:	# 若没有再有新的序列模式加入 或者 到达阈值 终止运行</span></div><div class="line">                print(<span class="string">'频繁多项集为:%s'</span> %queue_new)</div><div class="line">                <span class="keyword">break</span> </div><div class="line">            <span class="keyword">else</span>:	<span class="comment"># 否则构造候选序列模式</span></div><div class="line">                queue = []</div><div class="line">                queue = getComb(top, queue_new, res)</div><div class="line">                top = len(queue_new)</div></pre></td></tr></table></figure>
+<h4 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getComb</span><span class="params">(top, queue_new, res)</span>:</span></div><div class="line">    queue = []</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(top,len(queue_new)): </div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(top,len(queue_new)):         </div><div class="line">            <span class="keyword">if</span> i != j <span class="keyword">and</span> cmp(queue_new[i][<span class="number">1</span>:], queue_new[j][:len(queue_new[j])]) == <span class="number">0</span>:</div><div class="line">                tmp = copy.deepcopy(queue_new[i])</div><div class="line">                tmp.append(queue_new[j][len(queue_new[j])<span class="number">-1</span>])</div><div class="line">                <span class="keyword">if</span> tmp <span class="keyword">not</span> <span class="keyword">in</span> queue:</div><div class="line">                    queue.append(tmp)</div><div class="line"></div><div class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> res:</div><div class="line">            <span class="keyword">if</span> item <span class="keyword">not</span> <span class="keyword">in</span> queue_new[i][len(queue_new[i])<span class="number">-1</span>]:</div><div class="line">                tmp_two = copy.deepcopy(queue_new[i])</div><div class="line">                tmp_two[len(tmp_two)<span class="number">-1</span>].append(item)</div><div class="line">                tmp_two[len(tmp_two)<span class="number">-1</span>].sort()</div><div class="line">                <span class="keyword">if</span> tmp_two <span class="keyword">not</span> <span class="keyword">in</span> queue:</div><div class="line">                    queue.append(tmp_two)</div><div class="line">    <span class="keyword">return</span> queue</div></pre></td></tr></table></figure>
+<p>好像就这样。。。<br>疏漏。。肯定是有的。。。但图书馆闭馆了。。就先这样。。。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/DataMing/" rel="tag"># DataMing</a>
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/16/database/" rel="next" title="服务器上搭数据库">
+                <i class="fa fa-chevron-left"></i> 服务器上搭数据库
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/05/16/gsp/"
+     data-title="gsp算法"
+     data-content=""
+     data-url="http://yoursite.com/2017/05/16/gsp/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/05/16/gsp/"
+           data-title="gsp算法" data-url="http://yoursite.com/2017/05/16/gsp/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Dyyyyy" />
+          <p class="site-author-name" itemprop="name">Dyyyyy</p>
+           
+              <p class="site-description motion-element" itemprop="description">希望每天认识一点新东西:)</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Dyyyyy" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/Dyyyyy" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-coding"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解"><span class="nav-number">2.</span> <span class="nav-text">理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码。。。。"><span class="nav-number">3.</span> <span class="nav-text">代码。。。。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主函数"><span class="nav-number">3.1.</span> <span class="nav-text">主函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加载数据集"><span class="nav-number">3.2.</span> <span class="nav-text">加载数据集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造种子集合"><span class="nav-number">3.3.</span> <span class="nav-text">构造种子集合</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取序列集"><span class="nav-number">4.</span> <span class="nav-text">获取序列集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#连接"><span class="nav-number">4.1.</span> <span class="nav-text">连接</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dyyyyy</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.MyType
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"Dyyyyy"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("8GrqqBlEpLmWcqNq2G3wCngR-gzGzoHsz", "vaWsAXlXofMv5v39sw3mmoaN");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
