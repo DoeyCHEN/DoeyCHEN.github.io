@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="期货之前用的数据库用的是老师提供的数据库然后这学期。。。就。。。没法用了。。。让我来学一波怎么在服务器上搭mysql然后回来填坑！">
+<meta name="description" content="期货之前用的数据库用的是老师提供的数据库然后这学期。。。就。。。没法用了。。。让我来学一波怎么在服务器上搭mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="服务器上搭数据库">
+<meta property="og:title" content="CentOS7搭载mysql">
 <meta property="og:url" content="http://yoursite.com/2017/05/16/database/index.html">
 <meta property="og:site_name" content="Dyyyyy">
-<meta property="og:description" content="期货之前用的数据库用的是老师提供的数据库然后这学期。。。就。。。没法用了。。。让我来学一波怎么在服务器上搭mysql然后回来填坑！">
-<meta property="og:updated_time" content="2017-05-16T12:16:01.000Z">
+<meta property="og:description" content="期货之前用的数据库用的是老师提供的数据库然后这学期。。。就。。。没法用了。。。让我来学一波怎么在服务器上搭mysql">
+<meta property="og:updated_time" content="2017-05-18T03:03:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="服务器上搭数据库">
-<meta name="twitter:description" content="期货之前用的数据库用的是老师提供的数据库然后这学期。。。就。。。没法用了。。。让我来学一波怎么在服务器上搭mysql然后回来填坑！">
+<meta name="twitter:title" content="CentOS7搭载mysql">
+<meta name="twitter:description" content="期货之前用的数据库用的是老师提供的数据库然后这学期。。。就。。。没法用了。。。让我来学一波怎么在服务器上搭mysql">
 
 
 
@@ -130,7 +130,7 @@
 
 
 
-  <title> 服务器上搭数据库 | Dyyyyy </title>
+  <title> CentOS7搭载mysql | Dyyyyy </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -283,7 +283,7 @@
             
             
               
-                服务器上搭数据库
+                CentOS7搭载mysql
               
             
           </h1>
@@ -326,7 +326,7 @@
 
           
           
-             <span id="/2017/05/16/database/" class="leancloud_visitors" data-flag-title="服务器上搭数据库">
+             <span id="/2017/05/16/database/" class="leancloud_visitors" data-flag-title="CentOS7搭载mysql">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -355,8 +355,22 @@
       
 
       
-        <p>期货之前用的数据库用的是老师提供的数据库<br>然后这学期。。。就。。。没法用了。。。<br>让我来学一波怎么在服务器上搭mysql<br>然后回来填坑！</p>
+        <p>期货之前用的数据库用的是老师提供的数据库<br>然后这学期。。。就。。。没法用了。。。<br>让我来学一波怎么在服务器上搭mysql</p>
 <a id="more"></a>
+<h4 id="centos-mysql数据库安装和配置"><a href="#centos-mysql数据库安装和配置" class="headerlink" title="centos mysql数据库安装和配置"></a>centos mysql数据库安装和配置</h4><p>安装mariadb<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@VM_218_46_centos ~]# yum install mariadb-server mariadb</div></pre></td></tr></table></figure></p>
+<p>启动mariadb<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@VM_218_46_centos ~]# systemctl start mariadb</div></pre></td></tr></table></figure></p>
+<p>进入数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[root@VM_218_46_centos ~]# mysql</div><div class="line">Welcome to the MariaDB monitor.  Commands end with ; or \g.</div><div class="line">Your MariaDB connection id is 14</div><div class="line">Server version: 5.5.52-MariaDB MariaDB Server</div><div class="line"></div><div class="line">Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.</div><div class="line"></div><div class="line">Type &apos;help;&apos; or &apos;\h&apos; for help. Type &apos;\c&apos; to clear the current input statement.</div></pre></td></tr></table></figure></p>
+<p>设置密码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">MariaDB [mysql]&gt; update user set password=password(&quot;123456&quot;)where user=&apos;root&apos;;</div><div class="line">Query OK, 0 rows affected (0.00 sec)</div><div class="line">Rows matched: 4 Changed: 0 Warnings: 0</div></pre></td></tr></table></figure></p>
+<p>赋予权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">MariaDB [mysql]&gt; flush privileges;</div><div class="line">Query OK, 0 rows affected (0.00 sec)</div></pre></td></tr></table></figure></p>
+<p>退出重新登录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">MariaDB [mysql]&gt; exit</div><div class="line">Bye</div></pre></td></tr></table></figure></p>
+<p>输入密码登录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[root@VM_218_46_centos ~]# mysql -u root -p123456</div><div class="line">Welcome to the MariaDB monitor. Commands end with ; or \g.</div><div class="line">Your MariaDB connection id is 9</div><div class="line">Server version: 5.5.41-MariaDB MariaDB Server</div><div class="line"></div><div class="line">Copyright (c) 2000, 2014, Oracle, MariaDB Corporation Ab and others.</div><div class="line"></div><div class="line">Type &apos;help;&apos; or &apos;\h&apos; for help. Type &apos;\c&apos; to clear the current input statement.</div><div class="line"></div><div class="line">MariaDB [(none)]&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="开启3306端口"><a href="#开启3306端口" class="headerlink" title="开启3306端口"></a>开启3306端口</h4><p>mysql安装后默认是localhost访问，如果需要外部访问可以设置一个新的账号把host改为%，意味着所有ip均可以访问<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant all privileges on *.* to &apos;outUser&apos;@&apos;%&apos; identified by &apos;12&apos; with grant option</div></pre></td></tr></table></figure></p>
+<p>赋予权限，就可以使用outUser账户密码12来外部访问<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flush privileges;</div></pre></td></tr></table></figure></p>
+<p>有的时候无法访问需要打开防火墙开放端口3306<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">firewall-cmd --add-port=3306/tcp --permanent</div></pre></td></tr></table></figure></p>
+<h4 id="设置mysql支持中文"><a href="#设置mysql支持中文" class="headerlink" title="设置mysql支持中文"></a>设置mysql支持中文</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/my.cnf</div></pre></td></tr></table></figure>
+<p>在mysql标签下，添加以下两行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">character_set_server=utf8    </div><div class="line">init_connect=&apos;SET NAMES utf8&apos;</div></pre></td></tr></table></figure></p>
+<p>保存退出，重启数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl restart mariadb</div></pre></td></tr></table></figure></p>
+<h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><p><a href="http://www.cnblogs.com/starof/p/4680083.html" target="_blank" rel="external">centos7 mysql数据库安装和配置</a><br><a href="http://www.cnblogs.com/lxg0/articles/5598205.html" target="_blank" rel="external">centos7 设置mariadb密码</a><br><a href="http://www.cnblogs.com/yangxunwu1992/p/6091422.html" target="_blank" rel="external">centos7 打开mysql 3306端口并 设置外部访问</a><br><a href="http://blog.csdn.net/shenpibaipao/article/details/70740470#" target="_blank" rel="external">CentOS7.0环境下，为MariaDB设置中文</a></p>
 
       
     </div>
@@ -421,7 +435,7 @@
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2017/05/16/database/"
-     data-title="服务器上搭数据库"
+     data-title="CentOS7搭载mysql"
      data-content=""
      data-url="http://yoursite.com/2017/05/16/database/">
   <div class="ds-share-inline">
@@ -451,7 +465,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2017/05/16/database/"
-           data-title="服务器上搭数据库" data-url="http://yoursite.com/2017/05/16/database/">
+           data-title="CentOS7搭载mysql" data-url="http://yoursite.com/2017/05/16/database/">
       </div>
     
   </div>
@@ -475,8 +489,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -547,6 +570,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#centos-mysql数据库安装和配置"><span class="nav-number">1.</span> <span class="nav-text">centos mysql数据库安装和配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开启3306端口"><span class="nav-number">2.</span> <span class="nav-text">开启3306端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置mysql支持中文"><span class="nav-number">3.</span> <span class="nav-text">设置mysql支持中文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考链接"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
